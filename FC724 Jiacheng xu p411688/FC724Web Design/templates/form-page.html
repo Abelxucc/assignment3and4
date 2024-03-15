@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Stylesheets for consistent font across the website -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/724style.css') }}">
+        <meta charset="UTF-8">
+        <title>Home/FORM</title>
+
+         <!-- Multiple font preconnections for diverse typographic options -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">            
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <!-- Header section with the organization's logo and navigation -->
+        <div class="header">
+            <div class="logo">
+                <!-- Using the university logo for brand recognition -->
+                <img class="uofg-img" src="{{ url_for('static', filename='images/logo of uofg.jpg') }}">
+                <h2>Glasgow International College</h2>
+                <!-- navigation for better user orientation -->
+                <P>HOME / FORM</P>
+            </div>
+            <div class="navigation-container">
+                 <!-- Navigation bar for site-wide links -->
+                <div class="navigation">
+                    <a href="{{ url_for('home') }}">Home</a>
+                    <a href="{{ url_for('about') }}">about us</a>
+                    <a href="{{ url_for('form') }}">form</a>
+                    
+                </div>
+                <!-- Search form for user convenience -->
+                <form class="search-bar">
+                    <input type="text" name="search" placeholder="Search">
+                    <button type="submit">Go</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main content area for user interaction -->
+        <div class = "flex-parent">
+            <div class="container12">
+                <!-- Introduction text to welcome user participation -->
+                <div class="container13">
+                    <p>We greatly appreciate the opportunity to hear your thoughts and experiences regarding the school. Your insights are invaluable to us! </p>
+                </div>
+                <!-- Container for the main data collection form -->
+                <div class="container14">
+                    <div class="container20">
+                        <!-- Data collection form with various input types for comprehensive information gathering -->
+                        <form method="POST" action="{{ url_for('form') }}">
+                             {{ form.hidden_tag() }}
+                             <!-- Fieldset for grouping personal information fields -->
+                            <fieldset>
+                                <legend>Personal Information</legend>
+                                {{ form.first_name.label }} {{ form.first_name(size=20) }}
+                                {{ form.last_name.label }} {{ form.last_name(size=20) }}
+                            </fieldset>
+                            
+                            <!-- Fieldset for contact information to enable further communication -->
+                            <fieldset>
+                                <legend>Contact Information</legend>
+                                <!-- Email input for primary contact method, required for follow-up -->
+                                {{ form.email.label }} {{ form.email(size=20) }}
+                                {{ form.phone.label }} {{ form.phone(size=13) }}
+                            </fieldset>
+
+                            <fieldset>
+                            <legend>{{ form.experience.label.text }}</legend>
+                                {% for subfield in form.experience %}
+                                    <div>
+                                         {{ subfield() }} {{ subfield.label.text}}
+                                    </div>
+                                {% endfor %}
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>{{ form.improvement.label }}</legend>
+                                <div class="form-group">
+                                    {% for option in form.improvement %}
+                                    <div class="form-check">
+                                        {{ option(class="form-check-input") }}
+                                        {{ option.label(class="form-check-label") }}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                {% for error in form.improvement.errors %}
+                                <span class="text-danger">{{ error }}</span>
+                                {% endfor %}
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>{{ form.additional_feedback.label }}</legend>
+                                  <!-- Textarea for any additional comments, required to ensure users provide complete feedback -->
+                                {{ form.additional_feedback(rows=4, cols=40) }}
+                            </fieldset>
+
+                            <!-- Submit button for form submission -->
+
+                            {{ form.submit() }}
+                        </form>
+                    </div>
+                </div>
+                <!-- Contact information section for the university, providing address and contact details -->
+                <div class="container15">
+                    <p>University of Glasgow</br>
+                    Glasgow International College </br>
+                    Glasgow, G11 6NU, Scotland</br>
+                    Tel +44 (0) 0000000000</br>
+                    Contact us</br>
+                    Maps and travel</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Stylesheets for consistent font across the website -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/724style.css') }}">
+        <meta charset="UTF-8">
+        <title>Home/Welcome</title>
+
+         <!-- Multiple font preconnections for diverse typographic options -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">            
+    </head>
+    <body>
+        <!-- Header section with the organization's logo and navigation -->
+        <div class="header">
+            <div class="logo">
+                <!-- Using the university logo for brand recognition -->
+                <img class="uofg-img" src="{{ url_for('static', filename='images/logo of uofg.jpg') }}">
+                <h2>Glasgow International College</h2>
+                <!-- navigation for better user orientation -->
+                <P>HOME / FORM</P>
+            </div>
+            <div class="navigation-container">
+                 <!-- Navigation bar for site-wide links -->
+                <div class="navigation">
+                    <a href="{{ url_for('home') }}">Home</a>
+                    <a href="{{ url_for('about') }}">about us</a>
+                    <a href="{{ url_for('form') }}">form</a>
+                    
+                </div>
+                <!-- Search form for user convenience -->
+                <form class="search-bar">
+                    <input type="text" name="search" placeholder="Search">
+                    <button type="submit">Go</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class = "flex-parent">
+            <!-- Main container for flexible layout using Flexbox -->
+            <div class="container">
+                <!-- Sub-container for 'About Us' section -->
+                <div class="container1">
+                    <!-- Image that provides a visual representation of the university -->
+                    <div class="picture">
+                        <img class="uofg-view" src="{{ url_for('static', filename='images/uofgview.jpg') }}">
+                    </div>
+                    <!-- Header for the 'About Us' section -->
+                    <h2>Information about us</h2>
+                    <!-- List of links for various informational pages about the university -->
+                    <ul class="flexible-study-list">
+                        <li><a href="{{ url_for('about') }}">Understanding the Process</a></li>
+                        <li><a href="{{ url_for('about') }}">Student Success Stories</a></li>
+                        <li><a href="{{ url_for('about') }}">Improving Educational Outcomes</a></li>
+                        <li><a href="{{ url_for('about') }}">Enhancing Campus Life</a></li>
+                        <li><a href="{{ url_for('about') }}">Secure & Confidential</a></li>
+                        <li><a href="{{ url_for('about') }}">FAQs About Data Collection</a></li>
+                    </ul>
+                </div>
+                <!-- Container for welcome message and call-to-action -->
+                <div class="container2">
+                        <p>Hello! Welcome to the GIC Student Center! If you have any Question 
+                            please click below ↓
+                        </p>
+                </div>
+
+                <div class="container3">
+                    <div class="picture2">
+                        <img class="uofg-view2" src="{{ url_for('static', filename='images/formpage.jpg') }}">
+                    </div>
+                    <h2>Students Experience</h2>
+                    <ul class="flexible-study-list2">
+                        <!-- List of links related to information -->
+                        <li><a href="{{ url_for('about') }}">Personal Information</a></li>
+                        <li><a href="{{ url_for('about') }}">Academic Experience</a></li>
+                        <li><a href="{{ url_for('about') }}">Campus Facilities and Services</a></li>
+                        <li><a href="{{ url_for('about') }}">Overall Satisfaction</a></li>
+                        <li><a href="{{ url_for('about') }}">Consent and Privacy</a></li>
+                        <li><a href="{{ url_for('about') }}">FAQs About Data Collection</a></li>
+                    </ul>
+                </div>
+
+        <!-- Contact information container with image and link -->
+        <div class="container4">
+            <!-- Image related to contacting the university -->
+            <div class="picture3">
+                <img class="kelving" src="{{ url_for('static', filename='images/kelvingrove.jpg') }}" >
+            </div>
+            <!-- Header for the 'Contact Us' section -->
+            <h2>Contact us</h2>
+            <!-- Link to the contact information page -->
+            <ul class="flexible-study-list3">
+                <li><a href="{{ url_for('about') }}">Find details you need to get help.</a></li>
+            </ul>
+        </div>
+
+        <!-- Container for support section -->
+        <div class="container5">
+            <!-- Image prompting users to support the university -->
+            <div class="picture4">
+                <img class="panting" src="{{ url_for('static', filename='images/painting.jpg') }}">
+            </div>
+            <!-- Header for the 'Support Us' section -->
+            <h2>Support us</h2>
+            <!-- Call-to-action link for users to provide support -->
+            <ul class="flexible-study-list4">
+                <li><a href="{{ url_for('form') }}">Click here to fill the form</a></li>
+            </ul>
+        </div>
+
+        <!-- Footer container with the university's contact details -->
+        <div class="container6">
+            <p>University of Glasgow<br>
+            Glasgow International College <br>
+            Glasgow, G11 6NU, Scotland<br>
+            Tel +44 (0) 0000000000<br>
+            Contact us<br>
+            Maps and travel</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

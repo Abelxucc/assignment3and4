@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Stylesheets for consistent font across the website -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/724style.css') }}">
+        <meta charset="UTF-8">
+        <title>Home/INFORMATION</title>
+
+         <!-- Multiple font preconnections for diverse typographic options -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">            
+    </head>
+    <body>
+        <!-- Header section with the organization's logo and navigation -->
+        <div class="header">
+            <div class="logo">
+                <!-- Using the university logo for brand recognition -->
+                <img class="uofg-img" src="{{ url_for('static', filename='images/logo of uofg.jpg') }}">
+                <h2>Glasgow International College</h2>
+                <!-- navigation for better user orientation -->
+                <P>HOME / FORM</P>
+            </div>
+            <div class="navigation-container">
+                 <!-- Navigation bar for site-wide links -->
+                <div class="navigation">
+                    <a href="{{ url_for('home') }}">Home</a>
+                    <a href="{{ url_for('about') }}">about us</a>
+                    <a href="{{ url_for('form') }}">form</a>
+                </div>
+                <!-- Search form for user convenience -->
+                <form class="search-bar">
+                    <input type="text" name="search" placeholder="Search">
+                    <button type="submit">Go</button>
+                </form>
+            </div>
+        </div>
+        <!-- Main content section to explain data collection purposes -->
+        <div class = "flex-parent">
+            <div class="container7">
+                <!-- Introduction text to welcome user participation -->
+                <div class="container8">
+                    <p>Why we collect student information and feedback ?</p>
+                </div>
+                <div class="container9">
+                    <img class="info" src="{{ url_for('static', filename='images/viewview.jpg') }}">
+                    <h2>The Reasons for Data Collection</h2>
+                    <h3>Transparency:</h3>
+                    <li> Being clear about why data 
+                        is collected helps to build trust with students. <br/>
+                        When students understand the reasons behind data 
+                        collection, <br/>they may be more willing to participate
+                        and provide accurate information.</li>
+                    <h3>Educational Improvement:</h3>
+                    <li>It informs students that the data collected is used to monitor and enhance <br/>their learning journey, 
+                        which can lead to better academic outcomes.</li>
+
+                    
+                </div>
+                <div class="container10">
+                      <!-- Image depicting students, related to the context of engagement -->
+                    <img class="info2" src="{{ url_for('static', filename='images/student.jpg') }}">
+                    <h2>Benefits and Purposes of Data Collection</h2>
+                    <h3>Student Engagement:</h3>
+                    <li>collected data will be used
+                         to improve  their academic and overall experience
+                         <br/>they're more likely to engage 
+                         with the data collection process positively.</li>
+                    <h3>Continuous Improvement:</h3>
+                    <li>the benefits shows that the institution is committed to using the<br/> feedback to make 
+                        tangible improvements in the curriculum,<br/> teaching methods, campus services, etc.</li>
+                </div>
+                <div class="container11">
+                    <!-- Contact information for the university -->
+                    <p>University of Glasgow</br>
+                    Glasgow International College </br>
+                    Glasgow, G11 6NU, Scotland</br>
+                    Tel +44 (0) 0000000000</br>
+                    Contact us</br>
+                    Maps and travel</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
